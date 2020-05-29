@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+    postgres:
+        image: postgres:11.2-alpine
+        environment:
+            POSTGRES_USER: dbauser
+            POSTGRES_DB: pmzshop
+            POSTGRES_PASSWORD: pmztoor#
+        ports:
+            - "5432:5432"
