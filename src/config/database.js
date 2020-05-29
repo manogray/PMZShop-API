@@ -1,9 +1,12 @@
+require('dotenv/config');
+
 module.exports = {
-    dialect: 'postgres',
+    dialect: process.env.NODE_ENV == 'test' ? 'sqlite' : 'postgres',
     host: 'localhost',
-    username: 'dbauser',
-    password: 'pmztoor#',
-    database: 'pmzshop',
+    username: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASS,
+    database: process.env.DATABASE_NAME,
+    storage: './__tests__/database.sqlite',
     define: {
         timestamps: true,
         underscored: true,

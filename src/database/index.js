@@ -1,7 +1,6 @@
 import Sequelize from 'sequelize';
-import dotenv from 'dotenv';
 
-dotenv.config();
+import databaseConfig from '../config/database';
 
 const models = []
 
@@ -11,13 +10,7 @@ class Database {
     }
 
     init(){
-        this.connection = new Sequelize(process.env.DATABASE_URL, {
-            define: {
-                timestamps: true,
-                underscored: true,
-                underscoredAll: true,
-            }
-        });
+        this.connection = new Sequelize(databaseConfig);
 
         models
             .map(model => model.init(this.connection))
