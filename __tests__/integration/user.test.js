@@ -15,6 +15,7 @@ describe('User', () => {
                 name: 'Luis Mota',
                 email: 'lgmpf@icomp.ufam.edu.br',
                 passwd: '123456',
+                confirmPasswd: '123456'
             });
 
         expect(response.body).toHaveProperty('id');
@@ -26,7 +27,8 @@ describe('User', () => {
             .send({
                 name: 'Luis Mota',
                 email: 'lgmpf@icomp.ufam.edu.br',
-                passwd: '123456'
+                passwd: '123456',
+                confirmPasswd: '123456'
             })
 
         const response = await request(app)
