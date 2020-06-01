@@ -9,3 +9,16 @@ services:
             POSTGRES_PASSWORD: pmztoor#
         ports:
             - "5432:5432"
+
+    app:
+        build: .
+        ports:
+            - "3333:3333"
+        command: "yarn start"
+        depends_on:
+            - postgres
+        environment:
+            DB_HOST: postgres
+            DB_USER: dbauser
+            DB_PASS: pmztoor#
+            DB_NAME: pmzshop

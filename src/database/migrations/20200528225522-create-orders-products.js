@@ -3,7 +3,13 @@
 module.exports = {
     up: (queryInterface, Sequelize) => {
         return queryInterface.createTable('orders_products',
-        { 
+        {
+            id: {
+                type: Sequelize.INTEGER,
+                allowNull: false,
+                autoIncrement: true,
+                primaryKey: true,
+            }, 
             order_id: {
                 type: Sequelize.INTEGER,
                 allowNull: false,
@@ -23,6 +29,14 @@ module.exports = {
                 },
                 onUpdate: 'CASCADE',
                 onDelete: 'SET NULL',
+            },
+            created_at: {
+                type: Sequelize.DATE,
+                allowNull: false,
+            },
+            updated_at: {
+                type: Sequelize.DATE,
+                allowNull: false,
             }
         });
     },

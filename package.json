@@ -20,14 +20,15 @@
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.21.11",
     "sequelize-cli": "^5.5.1",
+    "short-unique-id": "^3.0.2",
     "sucrase": "^3.15.0",
     "yup": "^0.29.1"
   },
   "devDependencies": {
-    "sqlite3": "^4.2.0",
     "@sucrase/jest-plugin": "^2.0.0",
     "@types/jest": "^25.2.3",
     "jest": "^26.0.1",
+    "sqlite3": "^4.2.0",
     "supertest": "^4.0.2"
   }
 }

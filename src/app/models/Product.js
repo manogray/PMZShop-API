@@ -7,6 +7,12 @@ class Product extends Model {
             description: Sequelize.STRING,
             price: Sequelize.DOUBLE,
             unit: Sequelize.INTEGER,
+            amount: {
+               type: Sequelize.VIRTUAL,
+               get(){
+                   return 1;
+               }
+            },
         },
         {
             sequelize,

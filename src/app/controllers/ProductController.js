@@ -43,7 +43,7 @@ class ProductController {
 		}
 
 		const products = await Product.findAll({
-			order: ['name']
+			order: ['name'],
 		});
 
 		return res.json(products);
